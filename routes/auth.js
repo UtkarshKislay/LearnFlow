@@ -15,9 +15,18 @@ router.get(
     failureRedirect: "/",
   }),
   (req, res) => {
-    console.log(req.user);
+    const User=req.user;
+    if(User.role!=0 || User.role!=1){
+      return res.redirect('/signup');
+    }
     res.redirect("/dashboard");
   }
 );
+
+router.get('/logout',(req,res)=>{
+  req.logOut(()=>{
+    res.redirect('/');
+  })
+})
 
 export default router;

@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const userName = "utkarsh2237";
 const password = "4lKVSUT2f6ScG6lq";
-const dbName = "MSGAPP";
+const dbName = "ReadPost";
 const ConnectDb = async () => {
   try {
     const conn = await mongoose.connect(
